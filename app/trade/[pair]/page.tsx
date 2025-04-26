@@ -23,7 +23,7 @@ export default function Home() {
       <main className="mx-auto px-4 py-8">
         {/* Trading Pair Info */}
         <div className="flex gap-3">
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-3 grow">
             <div className="flex flex-col md:flex-row items-start md:items-center gap-3 p-2.5 bg-[#14161b] rounded-lg">
               <div className="flex items-center gap-2">
                 <div className="w-7 h-7 bg-[#edb546]/20 rounded-full flex items-center justify-center">
@@ -78,7 +78,7 @@ export default function Home() {
               </div>
 
               {/* Chart and Trading View */}
-              <div className="flex flex-col gap-3">
+              <div className="flex flex-col gap-3 grow">
                 <div className=" rounded-lg h-[350px]">
                   <TradingChart />
                 </div>

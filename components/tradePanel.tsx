@@ -8,7 +8,7 @@ export default function TradePanel() {
   const [amount, setAmount] = useState(596.54);
 
   return (
-    <div className="max-w-2xl mx-auto bg-black text-white rounded-2xl p-6 shadow-lg">
+    <div className=" mx-auto bg-black text-white rounded-2xl p-6 shadow-lg">
       <div className="flex justify-center space-x-4 mb-6">
         <button className="text-yellow-500 border-b-2 border-yellow-500 pb-1">Buy Long</button>
         <button className="text-gray-400">Sell Short</button>
