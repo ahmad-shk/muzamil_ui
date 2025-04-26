@@ -9,6 +9,7 @@ import BuySellPanel from "@/components/buy-sell-panel"
 import TopMovers from "@/components/top-movers"
 import OrderTabs from "@/components/order-tabs"
 import Footer from "@/components/footer"
+import CryptoTable from "@/components/CryptoTable"
 
 export default function Home() {
   return (
@@ -95,12 +96,7 @@ export default function Home() {
 
           <div className="p-2.5 bg-[#14161b] rounded-lg flex items-center">
             <div className="relative">
-              <Search className="absolute left-2 top-1/2 transform -translate-y-1/2 text-[#6f6a6b] h-3 w-3" />
-              <input
-                type="text"
-                placeholder="Search"
-                className="pl-7 pr-2 py-1 bg-[#1f2128] rounded-md border border-[#1f2128] w-full md:w-[180px] text-white text-[10px]"
-              />
+             <CryptoTable/>
             </div>
           </div>
         </div>
