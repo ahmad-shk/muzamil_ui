@@ -34,7 +34,7 @@ export default function Footer() {
         {/* Subscribe Now and Input */}
         <h3 className="text-lg font-semibold text-[#edb546] mb-2">Subscribe Now</h3>
 
-        <div className="flex w-full max-w-sm items-center border-b border-gray-600 mb-8">
+        <div className="flex w-full max-w-sm items-center border-b border-gray-600 mb-6">
           <input
             type="email"
             placeholder="E-mail Address"
@@ -46,7 +46,7 @@ export default function Footer() {
         </div>
 
         {/* Navigation Links */}
-        <div className="flex gap-6 mb-8">
+        <div className="flex gap-6 mb-6">
           <Link href="/buy-crypto" className="text-[#edb546] text-sm hover:opacity-80">
             Buy Crypto
           </Link>
@@ -56,7 +56,7 @@ export default function Footer() {
         </div>
 
         {/* Social Media Icons */}
-        <div className="flex flex-wrap justify-center gap-4 mb-8">
+        <div className="flex flex-wrap justify-center gap-4 mb-6">
           {socialLinks.map((social, index) => (
             <Link
               key={index}
@@ -69,10 +69,10 @@ export default function Footer() {
         </div>
 
         {/* Divider Line */}
-        <div className="w-full h-px bg-[#1f2128] my-6"></div>
+        <div className="w-full h-px bg-[#1f2128] my-4"></div>
 
         {/* Copyright */}
-        <div className="text-xs  text-center">
+        <div className="text-xs text-center mb-4">
           Copyright © 2025 KGC - All Rights Reserved.
         </div>
 
