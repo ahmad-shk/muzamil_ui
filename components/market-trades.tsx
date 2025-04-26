@@ -7,8 +7,8 @@ export default function MarketTrades() {
   const [activeTab, setActiveTab] = useState("market")
 
   return (
-    <div className="h-full flex flex-col">
-      <div className="flex items-center justify-between px-3 py-2 border-b border-[#1f2128]">
+    <div className="-h-full flex flex-col rounded-xl">
+      <div className="flex items-center justify-between px-4 py-2 pt-4 border-b border-[#1f2128] rounded-xl">
         <h3 className="font-medium text-xs">Market Trades</h3>
         <div className="flex items-center gap-1">
           <button
@@ -51,7 +51,7 @@ export default function MarketTrades() {
         ].map((trade, i) => (
           <div
             key={i}
-            className="grid grid-cols-3 px-3 py-1 text-[10px] border-b border-[#1f2128]/50 hover:bg-[#1f2128]/50"
+            className="flex justify-between px-3 py-1 text-[10px] border-b border-[#1f2128]/50 hover:bg-[#1f2128]/50"
           >
             <div className={trade.type === "buy" ? "text-[#15b34c]" : "text-[#f6465d]"}>{trade.price.toFixed(2)}</div>
             <div>{trade.amount.toFixed(3)}</div>

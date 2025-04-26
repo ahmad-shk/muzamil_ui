@@ -71,7 +71,7 @@ export default function OrderBook() {
         {(activeTab === "all" || activeTab === "sell") && (
           <>
             {sellOrders.map((order, i) => (
-              <div key={`sell-${i}`} className="relative grid grid-cols-3 px-3 py-1 text-right border-b border-[#1f2128]">
+              <div key={`sell-${i}`} className="relative flex justify-between px-3 py-1 gap-16 border-b border-[#1f2128]">
                 <div className="text-left text-[#f6465d] z-10">{order.price.toFixed(2)}</div>
                 <div className="z-10">{order.amount.toFixed(3)}</div>
                 <div className="z-10">{(order.price * order.amount).toFixed(2)}</div>
@@ -94,7 +94,7 @@ export default function OrderBook() {
         {(activeTab === "all" || activeTab === "buy") && (
           <>
             {buyOrders.map((order, i) => (
-              <div key={`buy-${i}`} className="relative grid grid-cols-3 px-3 py-1 text-right border-b border-[#1f2128]">
+              <div key={`buy-${i}`} className="relative flex justify-between px-3 py-1 gap-16 border-b border-[#1f2128]">
                 <div className="text-left text-[#0ecb81] z-10">{order.price.toFixed(2)}</div>
                 <div className="z-10">{order.amount.toFixed(3)}</div>
                 <div className="z-10">{(order.price * order.amount).toFixed(2)}</div>

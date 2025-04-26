@@ -11,102 +11,103 @@ import OrderTabs from "@/components/order-tabs"
 import Footer from "@/components/footer"
 import CryptoTable from "@/components/CryptoTable"
 import Header from "@/components/header"
+import TradePanel from "@/components/tradePanel"
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#090a0c] text-white">
+    <div className=" bg-[#090a0c] text-white">
       {/* Header */}
-    <Header/>
+      <Header />
 
       {/* Main Content */}
-      <main className="container mx-auto px-4 py-8">
+      <main className="mx-auto px-4 py-8">
         {/* Trading Pair Info */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-3 mb-3">
-          <div className="flex flex-col md:flex-row items-start md:items-center gap-3 p-2.5 bg-[#14161b] rounded-lg">
-            <div className="flex items-center gap-2">
-              <div className="w-7 h-7 bg-[#edb546]/20 rounded-full flex items-center justify-center">
-                <span className="text-[#edb546] font-bold text-xs">B</span>
+        <div className="flex gap-3">
+          <div className="flex flex-col gap-3 grow">
+            <div className="flex flex-col md:flex-row items-start md:items-center gap-3 py-4 px-3 bg-[#14161b] rounded-xl">
+              <div className="flex items-center gap-2">
+                <div className="w-7 h-7 bg-[#edb546]/20 rounded-full flex items-center justify-center">
+                  <span className="text-[#edb546] font-bold text-xs">B</span>
+                </div>
+                <div>
+                  <h2 className="text-sm font-bold">BNB/USDT</h2>
+                  <p className="text-[10px] text-[#6f6a6b]">BNB Price</p>
+                </div>
               </div>
-              <div>
-                <h2 className="text-sm font-bold">BNB/USDT</h2>
-                <p className="text-[10px] text-[#6f6a6b]">BNB Price</p>
+
+              <div className="flex flex-wrap gap-4 md:ml-6">
+                <div className="flex flex-col">
+                  <span className="text-[10px] text-[#6f6a6b]">24h Change</span>
+                  <span className="text-[#f6465d] flex items-center text-[10px]">-10.10 -2.7%</span>
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-[10px] text-[#6f6a6b]">24h High</span>
+                  <span className="text-[10px]">614.20</span>
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-[10px] text-[#6f6a6b]">24h Low</span>
+                  <span className="text-[10px]">592.90</span>
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-[10px] text-[#6f6a6b]">24h Volume (BNB)</span>
+                  <span className="text-[10px]">270,339.08</span>
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-[10px] text-[#6f6a6b]">24h Volume (USDT)</span>
+                  <span className="text-[10px]">158,484,451.40</span>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-2 md:ml-auto">
+                <span className="text-[10px] text-[#6f6a6b]">Token Tags:</span>
+                <div className="flex gap-1">
+                  <span className="text-[9px] bg-[#0089d0]/20 text-[#0089d0] px-1.5 py-0.5 rounded">Layer 1</span>
+                  <span className="text-[9px] bg-[#0089d0]/20 text-[#0089d0] px-1.5 py-0.5 rounded">Layer 2</span>
+                  <span className="text-[9px] bg-[#0089d0]/20 text-[#0089d0] px-1.5 py-0.5 rounded">BNB Chain</span>
+                  <span className="text-[9px] bg-[#0089d0]/20 text-[#0089d0] px-1.5 py-0.5 rounded">Vol 1w</span>
+                </div>
               </div>
             </div>
 
-            <div className="flex flex-wrap gap-4 md:ml-6">
-              <div className="flex flex-col">
-                <span className="text-[10px] text-[#6f6a6b]">24h Change</span>
-                <span className="text-[#f6465d] flex items-center text-[10px]">-10.10 -2.7%</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-[10px] text-[#6f6a6b]">24h High</span>
-                <span className="text-[10px]">614.20</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-[10px] text-[#6f6a6b]">24h Low</span>
-                <span className="text-[10px]">592.90</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-[10px] text-[#6f6a6b]">24h Volume (BNB)</span>
-                <span className="text-[10px]">270,339.08</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-[10px] text-[#6f6a6b]">24h Volume (USDT)</span>
-                <span className="text-[10px]">158,484,451.40</span>
-              </div>
-            </div>
 
-            <div className="flex items-center gap-2 md:ml-auto">
-              <span className="text-[10px] text-[#6f6a6b]">Token Tags:</span>
-              <div className="flex gap-1">
-                <span className="text-[9px] bg-[#0089d0]/20 text-[#0089d0] px-1.5 py-0.5 rounded">Layer 1</span>
-                <span className="text-[9px] bg-[#0089d0]/20 text-[#0089d0] px-1.5 py-0.5 rounded">Layer 2</span>
-                <span className="text-[9px] bg-[#0089d0]/20 text-[#0089d0] px-1.5 py-0.5 rounded">BNB Chain</span>
-                <span className="text-[9px] bg-[#0089d0]/20 text-[#0089d0] px-1.5 py-0.5 rounded">Vol 1w</span>
+            {/* Trading Interface */}
+            <div className="flex gap-3">
+              {/* Order Book */}
+              <div className="bg-[#14161b] rounded-lg ">
+                <OrderBook />
               </div>
-            </div>
-          </div>
 
-          <div className="p-2.5 bg-[#14161b] rounded-lg flex items-center">
-            <div className="relative">
-             <CryptoTable/>
-            </div>
-          </div>
-        </div>
-
-        {/* Trading Interface */}
-        <div className="grid grid-cols-1 lg:grid-cols-[320px_1fr_320px] gap-3">
-          {/* Order Book */}
-          <div className="bg-[#14161b] rounded-lg overflow-hidden h-[500px]">
-            <OrderBook />
-          </div>
-
-          {/* Chart and Trading View */}
-          <div className="flex flex-col gap-3">
-            <div className="bg-[#14161b] rounded-lg overflow-hidden h-[350px]">
-              <TradingChart />
-            </div>
-            <div className="bg-[#14161b] rounded-lg overflow-hidden h-[142px]">
-              <TradingView />
+              {/* Chart and Trading View */}
+              <div className="flex flex-col gap-3 grow">
+                <div className=" rounded-lg h-[350px]">
+                  <TradingChart />
+                </div>
+                <div className=" rounded-lg">
+                  <TradePanel />
+                </div>
+              </div>
             </div>
           </div>
 
           {/* Market Trades and Buy/Sell */}
           <div className="flex flex-col gap-3">
-            <div className="bg-[#14161b] rounded-lg overflow-hidden h-[200px]">
+            <div className="bg-[#14161b] rounded-lg ">
+              <div className="p-2.5 bg-[#14161b] rounded-lg flex items-center">
+                <CryptoTable />
+              </div>
+            </div>
+            <div className="bg-[#14161b] rounded-lg ">
               <MarketTrades />
             </div>
-            <div className="bg-[#14161b] rounded-lg overflow-hidden h-[220px]">
-              <BuySellPanel />
-            </div>
-            <div className="bg-[#14161b] rounded-lg overflow-hidden h-[72px]">
+            <div className="bg-[#14161b] rounded-lg ">
               <TopMovers />
             </div>
           </div>
         </div>
 
+
         {/* Order History */}
-        <div className="mt-3 bg-[#14161b] rounded-lg overflow-hidden">
+        <div className="mt-3 bg-[#14161b] rounded-lg ">
           <OrderTabs />
         </div>
 
@@ -123,6 +124,7 @@ export default function Home() {
             to trade
           </p>
         </div>
+
       </main>
 
       {/* Footer */}
