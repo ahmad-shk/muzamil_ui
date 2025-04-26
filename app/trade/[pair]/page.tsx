@@ -10,40 +10,13 @@ import TopMovers from "@/components/top-movers"
 import OrderTabs from "@/components/order-tabs"
 import Footer from "@/components/footer"
 import CryptoTable from "@/components/CryptoTable"
+import Header from "@/components/header"
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#090a0c] text-white">
       {/* Header */}
-      <header className="border-b border-[#1f2128] px-6 py-3 flex items-center justify-between">
-        <div className="flex items-center gap-8">
-          <Link href="/markets/overview" className="flex items-center">
-            <Image
-              src="/logo.svg?height=36&width=140"
-              alt="KGC Trading"
-              width={140}
-              height={36}
-              className="h-9"
-            />
-          </Link>
-          <nav className="hidden md:flex items-center gap-6">
-            <Link href="/trade/BTC_USDC" className="text-[#edb546] hover:text-[#edb546]/80 text-sm">
-              Buy Crypto
-            </Link>
-            <Link href="/markets/overview" className="text-[#edb546] hover:text-[#edb546]/80 text-sm">
-              Markets
-            </Link>
-          </nav>
-        </div>
-        <div>
-          <Link
-            href="/login"
-            className="bg-[#edb546] hover:bg-[#edb546]/90 text-black font-medium px-4 py-1.5 rounded-md text-sm"
-          >
-            Log in
-          </Link>
-        </div>
-      </header>
+    <Header/>
 
       {/* Main Content */}
       <main className="container mx-auto px-4 py-8">
