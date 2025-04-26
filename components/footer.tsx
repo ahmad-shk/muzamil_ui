@@ -38,10 +38,10 @@ export default function Footer() {
           <input
             type="email"
             placeholder="E-mail Address"
-            className="flex-1 bg-transparent text-center text-white placeholder-white outline-none py-2 text-sm border-none"
+            className="flex-1 ml-[10px] bg-transparent text-center text-white placeholder-white placeholder:text-base outline-none py-2 text-sm border-none"
           />
           <button className="ml-2">
-            <SubDirect  />
+            <SubDirect />
           </button>
         </div>
 

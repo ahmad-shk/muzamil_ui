@@ -131,7 +131,7 @@ export default function Home() {
 
         <div className="mb-8 border border-[#2a2a2a] rounded-2xl p-6">
           <h2 className="text-2xl text-[#EDB546]  font-bold mb-4">Top Tokens by Market Capitalization</h2>
-          <p className="text-gray-400 mb-4">
+          <p className="text-gray-300 mb-4">
             Lorem ipsum dolor sit amet consectetur. Vulputat volutpat tempus erat maecenas congue nam in. Orci euismod
             non turpis sapien tellus ipsum. Orci laoreet lacinia dui lacinia eget. Eget urna odio lectus et sed donec.
             Tortor urna vel felis dictum facilisis est justo mi nisi. Egestas sed tempor semper augue at.
