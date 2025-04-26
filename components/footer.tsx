@@ -2,100 +2,80 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowUp, Facebook, Instagram, Twitter, Youtube } from "lucide-react"
+import { WhatsApp, Discord, Telegram, TikTok, Facebook, Twitter, CoinMarketCap, Instagram, YouTube, Reddit, SubDirect } from "./svg"
 
 export default function Footer() {
+  const socialLinks = [
+    { icon: <Discord />, href: "#" },
+    { icon: <Telegram />, href: "#" },
+    { icon: <TikTok />, href: "#" },
+    { icon: <Facebook />, href: "#" },
+    { icon: <Twitter />, href: "#" },
+    { icon: <Reddit />, href: "#" },
+    { icon: <Instagram />, href: "#" },
+    { icon: <YouTube />, href: "#" },
+    { icon: <CoinMarketCap />, href: "#" },
+    { icon: <WhatsApp />, href: "#" },
+  ]
+
   return (
-    <footer className="mt-12 bg-[#14161b] border-t border-[#1f2128]">
-      <div className="container mx-auto px-4 py-10">
-        <div className="flex flex-col items-center mb-10">
-          <Image
-            src="/logo.svg?height=70&width=160"
-            alt="KGC Trading"
-            width={160}
-            height={70}
-            className="h-16 mb-6"
+    <footer className="border-t border-[#1f2128]">
+      <div className="container mx-auto px-4 py-10 flex flex-col items-center">
+
+        {/* Logo */}
+        <Image
+          src="/logo.svg"
+          alt="KGC Trading"
+          width={160}
+          height={70}
+          className="mb-8"
+        />
+
+        {/* Subscribe Now and Input */}
+        <h3 className="text-lg font-semibold text-[#edb546] mb-2">Subscribe Now</h3>
+
+        <div className="flex w-full max-w-sm items-center border-b border-gray-600 mb-8">
+          <input
+            type="email"
+            placeholder="E-mail Address"
+            className="flex-1 bg-transparent text-center text-white placeholder-white outline-none py-2 text-sm border-none"
           />
-          <h3 className="text-lg font-bold text-[#edb546] mb-4">Subscribe Now</h3>
-          <div className="flex w-full max-w-md">
-            <input
-              type="email"
-              placeholder="E-mail Address"
-              className="flex-1 bg-[#1f2128] border border-[#1f2128] rounded-l-md px-3 py-1.5 text-white text-sm"
-            />
-            <button className="bg-[#edb546] hover:bg-[#edb546]/90 text-black font-medium px-3 py-1.5 rounded-r-md">
-              <ArrowUp className="h-4 w-4" />
-            </button>
-          </div>
+          <button className="ml-2">
+            <SubDirect  />
+          </button>
         </div>
 
-        <div className="flex justify-center gap-5 mb-6">
-          <Link href="/buy-crypto" className="text-[#edb546] hover:text-[#edb546]/80 text-sm">
+        {/* Navigation Links */}
+        <div className="flex gap-6 mb-8">
+          <Link href="/buy-crypto" className="text-[#edb546] text-sm hover:opacity-80">
             Buy Crypto
           </Link>
-          <Link href="/markets" className="text-[#edb546] hover:text-[#edb546]/80 text-sm">
+          <Link href="/markets" className="text-[#edb546] text-sm hover:opacity-80">
             Markets
           </Link>
         </div>
 
-        <div className="flex justify-center gap-4 mb-6">
-          <Link
-            href="#"
-            className="w-7 h-7 rounded-full bg-[#1f2128] flex items-center justify-center hover:bg-[#1f2128]/80"
-          >
-            <div className="text-[#edb546] w-3.5 h-3.5">●</div>
-          </Link>
-          <Link
-            href="#"
-            className="w-7 h-7 rounded-full bg-[#1f2128] flex items-center justify-center hover:bg-[#1f2128]/80"
-          >
-            <div className="text-[#edb546] w-3.5 h-3.5">●</div>
-          </Link>
-          <Link
-            href="#"
-            className="w-7 h-7 rounded-full bg-[#1f2128] flex items-center justify-center hover:bg-[#1f2128]/80"
-          >
-            <Twitter className="text-[#edb546] w-3.5 h-3.5" />
-          </Link>
-          <Link
-            href="#"
-            className="w-7 h-7 rounded-full bg-[#1f2128] flex items-center justify-center hover:bg-[#1f2128]/80"
-          >
-            <Facebook className="text-[#edb546] w-3.5 h-3.5" />
-          </Link>
-          <Link
-            href="#"
-            className="w-7 h-7 rounded-full bg-[#1f2128] flex items-center justify-center hover:bg-[#1f2128]/80"
-          >
-            <div className="text-[#edb546] w-3.5 h-3.5">●</div>
-          </Link>
-          <Link
-            href="#"
-            className="w-7 h-7 rounded-full bg-[#1f2128] flex items-center justify-center hover:bg-[#1f2128]/80"
-          >
-            <Instagram className="text-[#edb546] w-3.5 h-3.5" />
-          </Link>
-          <Link
-            href="#"
-            className="w-7 h-7 rounded-full bg-[#1f2128] flex items-center justify-center hover:bg-[#1f2128]/80"
-          >
-            <div className="text-[#edb546] w-3.5 h-3.5">@</div>
-          </Link>
-          <Link
-            href="#"
-            className="w-7 h-7 rounded-full bg-[#1f2128] flex items-center justify-center hover:bg-[#1f2128]/80"
-          >
-            <Youtube className="text-[#edb546] w-3.5 h-3.5" />
-          </Link>
-          <Link
-            href="#"
-            className="w-7 h-7 rounded-full bg-[#1f2128] flex items-center justify-center hover:bg-[#1f2128]/80"
-          >
-            <div className="text-[#edb546] w-3.5 h-3.5">●</div>
-          </Link>
+        {/* Social Media Icons */}
+        <div className="flex flex-wrap justify-center gap-4 mb-8">
+          {socialLinks.map((social, index) => (
+            <Link
+              key={index}
+              href={social.href}
+              className="w-7 h-7 flex items-center justify-center rounded-full bg-[#1f2128] hover:bg-[#1f2128]/80"
+            >
+              {social.icon}
+            </Link>
+          ))}
         </div>
 
-        <div className="text-center text-xs text-[#6f6a6b]">Copyright © 2025 KGC - All Rights Reserved.</div>
+        {/* Divider Line */}
+        <div className="w-full h-px bg-[#1f2128] my-6"></div>
+
+        {/* Copyright */}
+        <div className="text-xs  text-center">
+          Copyright © 2025 KGC - All Rights Reserved.
+        </div>
+
       </div>
     </footer>
   )
