@@ -11,15 +11,16 @@ import OrderTabs from "@/components/order-tabs"
 import Footer from "@/components/footer"
 import CryptoTable from "@/components/CryptoTable"
 import Header from "@/components/header"
+import TradePanel from "@/components/tradePanel"
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#090a0c] text-white">
+    <div className=" bg-[#090a0c] text-white">
       {/* Header */}
     <Header/>
 
       {/* Main Content */}
-      <main className="container mx-auto px-4 py-8">
+      <main className="mx-auto px-4 py-8">
         {/* Trading Pair Info */}
 
           <div className="flex flex-col md:flex-row items-start md:items-center gap-3 p-2.5 bg-[#14161b] rounded-lg">
@@ -71,32 +72,31 @@ export default function Home() {
         {/* Trading Interface */}
         <div className="grid grid-cols-1 lg:grid-cols-[320px_1fr_320px] gap-3">
           {/* Order Book */}
-          <div className="bg-[#14161b] rounded-lg overflow-hidden h-[500px]">
+          <div className="bg-[#14161b] rounded-lg ">
             <OrderBook />
           </div>
 
           {/* Chart and Trading View */}
           <div className="flex flex-col gap-3">
-            <div className="bg-[#14161b] rounded-lg overflow-hidden h-[350px]">
+            <div className=" rounded-lg h-[350px]">
               <TradingChart />
             </div>
-            <div className="bg-[#14161b] rounded-lg overflow-hidden h-[142px]">
-              {/* <TradingView /> */}
-              <BuySellPanel />
+            <div className=" rounded-lg">
+              <TradePanel />
             </div>
           </div>
 
           {/* Market Trades and Buy/Sell */}
           <div className="flex flex-col gap-3">
-            <div className="bg-[#14161b] rounded-lg overflow-hidden h-[200px]">
+            <div className="bg-[#14161b] rounded-lg h-[200px]">
             <div className="p-2.5 bg-[#14161b] rounded-lg flex items-center">
              <CryptoTable/>
           </div>
             </div>
-            <div className="bg-[#14161b] rounded-lg overflow-hidden h-[220px]">        
+            <div className="bg-[#14161b] rounded-lg h-[220px]">        
               <MarketTrades />
             </div>
-            <div className="bg-[#14161b] rounded-lg overflow-hidden h-[72px]">
+            <div className="bg-[#14161b] rounded-lg h-[72px]">
               <TopMovers />
             </div>
           </div>
@@ -105,7 +105,7 @@ export default function Home() {
          
 
         {/* Order History */}
-        <div className="mt-3 bg-[#14161b] rounded-lg overflow-hidden">
+        <div className="mt-3 bg-[#14161b] rounded-lg ">
           <OrderTabs />
         </div>
 
