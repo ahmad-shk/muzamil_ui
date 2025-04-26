@@ -4,133 +4,197 @@ import { ArrowRight, ArrowUpDown } from "lucide-react"
 import Footer from "@/components/footer"
 import Header from "@/components/header"
 import TokenRow from "@/components/tokenRow"
-import CoinItem from "@/components/coinItem"
+import HotCoins from "@/components/coinItem"
+
+
+const tokenData = [
+  {
+    name: "BNB",
+    img: "/Group.png",
+    price: "$120.00",
+    change: "+1.03%",
+    volume: "$500M",
+    marketCap: "$20B",
+    arrow: "/Frame.png",
+  },
+  {
+    name: "BTC",
+    img: "/Group (1).png",
+    price: "$31.52K",
+    change: "+5.03%",
+    volume: "$25B",
+    marketCap: "$600B",
+    arrow: "/Frame.png",
+  },
+  {
+    name: "ETH",
+    img: "/Group (2).png",
+    price: "$1.52K",
+    change: "+11.00%",
+    volume: "$10B",
+    marketCap: "$200B",
+    arrow: "/Frame.png",
+  },
+  {
+    name: "BNB",
+    img: "/Group.png",
+    price: "$120.00",
+    change: "+1.03%",
+    volume: "$500M",
+    marketCap: "$20B",
+    arrow: "/Frame.png",
+  },
+  {
+    name: "BTC",
+    img: "/Group (1).png",
+    price: "$31.52K",
+    change: "+5.03%",
+    volume: "$25B",
+    marketCap: "$600B",
+    arrow: "/Frame.png",
+  },
+  {
+    name: "ETH",
+    img: "/Group (2).png",
+    price: "$1.52K",
+    change: "+11.00%",
+    volume: "$10B",
+    marketCap: "$200B",
+    arrow: "/Frame.png",
+  },
+  {
+    name: "BNB",
+    img: "/Group.png",
+    price: "$120.00",
+    change: "+1.03%",
+    volume: "$500M",
+    marketCap: "$20B",
+    arrow: "/Frame.png",
+  },
+  {
+    name: "BTC",
+    img: "/Group (1).png",
+    price: "$31.52K",
+    change: "+5.03%",
+    volume: "$25B",
+    marketCap: "$600B",
+    arrow: "/Frame.png",
+  },
+  {
+    name: "ETH",
+    img: "/Group (2).png",
+    price: "$1.52K",
+    change: "+11.00%",
+    volume: "$10B",
+    marketCap: "$200B",
+    arrow: "/Frame.png",
+  },
+];
+
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#090a0c] text-white">
       {/* Header */}
-    
-    <Header/> 
+
+      <Header />
       {/* Main Content */}
       <main className="container mx-auto px-4 py-8">
         {/* Market Overview */}
         <section className="mb-8">
-          <h2 className="text-2xl font-bold mb-4">Market Overview</h2>
+          <h2 className="text-2xl text-[#EDB546] font-bold mb-4">Market Overview</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {/* Hot Coins */}
-            <div className="bg-[#14161b] rounded-lg p-4">
-              <div className="flex justify-between items-center mb-4">
-                <h3 className="font-medium">Hot Coins</h3>
-                <Link href="/hot-coins" className="text-[#f0b90b] flex items-center text-sm">
-                  More <ArrowRight className="h-4 w-4 ml-1" />
-                </Link>
-              </div>
-              <div className="space-y-3">
-                <CoinItem coin="BNB" price="$120.00" change="+1.03%" />
-                <CoinItem coin="BTC" price="$31.52K" change="+5.03%" />
-                <CoinItem coin="ETH" price="$1.52K" change="+1.00%" />
-              </div>
+
+            <div className="space-y-3">
+              <HotCoins />
             </div>
 
+
             {/* Top Gainer Coin */}
-            <div className="bg-[#14161b] rounded-lg p-4">
-              <div className="flex justify-between items-center mb-4">
-                <h3 className="font-medium">Top Gainer Coin</h3>
-                <Link href="/top-gainers" className="text-[#f0b90b] flex items-center text-sm">
-                  More <ArrowRight className="h-4 w-4 ml-1" />
-                </Link>
-              </div>
-              <div className="space-y-3">
-                <CoinItem coin="BNB" price="$120.00" change="+1.03%" />
-                <CoinItem coin="BTC" price="$31.52K" change="+5.03%" />
-                <CoinItem coin="ETH" price="$1.52K" change="+1.00%" />
-              </div>
+
+
+            <div className="space-y-3">
+              <HotCoins />
             </div>
 
             {/* Top Volume Price */}
-            <div className="bg-[#14161b] rounded-lg p-4">
-              <div className="flex justify-between items-center mb-4">
-                <h3 className="font-medium">Top Volume Price</h3>
-                <Link href="/top-volume" className="text-[#f0b90b] flex items-center text-sm">
-                  More <ArrowRight className="h-4 w-4 ml-1" />
-                </Link>
-              </div>
-              <div className="space-y-3">
-                <CoinItem coin="BNB" price="$120.00" change="+1.03%" />
-                <CoinItem coin="BTC" price="$31.52K" change="+5.03%" />
-                <CoinItem coin="ETH" price="$1.52K" change="+1.00%" />
-              </div>
+
+            <div className="space-y-3">
+              <HotCoins />
             </div>
+
           </div>
         </section>
 
         {/* Top Tokens by Market Capitalization */}
-        <section className="mb-12">
-          <div className="bg-[#14161b] rounded-lg p-6">
-            <h2 className="text-2xl font-bold mb-4">Top Tokens by Market Capitalization</h2>
-            <p className="text-gray-400 mb-4">
-              Lorem ipsum dolor sit amet consectetur. Vulputat volutpat tempus erat maecenas congue nam in. Orci euismod
-              non turpis sapien tellus ipsum. Orci laoreet lacinia dui lacinia eget. Eget urna odio lectus et sed donec.
-              Tortor urna vel felis dictum facilisis est justo mi nisi. Egestas sed tempor semper augue at.
-            </p>
-            <button className="text-[#f0b90b] flex items-center text-sm mb-4">
-              Show More <ArrowRight className="h-4 w-4 ml-1" />
-            </button>
 
-            {/* Tokens Table */}
+        <div className="mb-8 border border-[#2a2a2a] rounded-2xl p-6">
+          <h2 className="text-2xl text-[#EDB546]  font-bold mb-4">Top Tokens by Market Capitalization</h2>
+          <p className="text-gray-400 mb-4">
+            Lorem ipsum dolor sit amet consectetur. Vulputat volutpat tempus erat maecenas congue nam in. Orci euismod
+            non turpis sapien tellus ipsum. Orci laoreet lacinia dui lacinia eget. Eget urna odio lectus et sed donec.
+            Tortor urna vel felis dictum facilisis est justo mi nisi. Egestas sed tempor semper augue at.
+          </p>
+          <button className=" flex items-center text-[#EDB546]  text-sm mb-4">
+            Show More <ArrowRight className="h-4 w-4 ml-1" />
+          </button>
+        </div>
+
+
+
+
+
+        <section className="mb-12">
+          <div className="rounded-lg p-6 ">
             <div className="overflow-x-auto">
-              <table className="w-full">
+              <table className="w-full table-fixed">
                 <thead>
-                  <tr className="border-b border-[#2b2d32]">
-                    <th className="text-left py-4 px-2 font-medium flex items-center">
-                      Name <ArrowUpDown className="h-4 w-4 ml-1" />
+                  <tr className="text-[#EDB546] text-sm">
+                    <th className="text-left py-4 px-4 font-semibold">
+                      <div className="flex items-center">
+                        Name <ArrowUpDown className="h-4 w-4 ml-1" />
+                      </div>
                     </th>
-                    <th className="text-left py-4 px-2 font-medium">
+                    <th className="text-left py-4 px-4 font-semibold">
                       <div className="flex items-center">
                         Price <ArrowUpDown className="h-4 w-4 ml-1" />
                       </div>
                     </th>
-                    <th className="text-left py-4 px-2 font-medium">
+                    <th className="text-left py-4 px-4 font-semibold">
                       <div className="flex items-center">
                         24h <ArrowUpDown className="h-4 w-4 ml-1" />
                       </div>
                     </th>
-                    <th className="text-left py-4 px-2 font-medium">
+                    <th className="text-left py-4 px-4 font-semibold">
                       <div className="flex items-center">
-                        24 Volume <ArrowUpDown className="h-4 w-4 ml-1" />
+                        24h Volume <ArrowUpDown className="h-4 w-4 ml-1" />
                       </div>
                     </th>
-                    <th className="text-left py-4 px-2 font-medium">
+                    <th className="text-left py-4 px-4 font-semibold">
                       <div className="flex items-center">
                         Market Cap <ArrowUpDown className="h-4 w-4 ml-1" />
                       </div>
                     </th>
-                    <th className="text-left py-4 px-2 font-medium">Action</th>
+                    <th className="text-left py-4 px-4 font-semibold">Action</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {[...Array(10)].map((_, index) => (
-                    <TokenRow key={index} coin={index % 3 === 0 ? "BNB" : index % 3 === 1 ? "BTC" : "ETH"} />
+                  {tokenData.map((item, index) => (
+                    <TokenRow
+                      key={index}
+                      coin={item.name}
+                      img={item.img}
+                      price={item.price}
+                      change={item.change}
+                      volume={item.volume}
+                      marketCap={item.marketCap}
+                      arrow={item.arrow}
+                    />
                   ))}
                 </tbody>
               </table>
             </div>
-          </div>
-        </section>
-
-        {/* Subscribe Section */}
-        <section className="py-16 text-center">
-          <h2 className="text-3xl font-bold mb-8">Subscribe Now</h2>
-          <div className="max-w-md mx-auto flex">
-            <input
-              type="email"
-              placeholder="E-mail Address"
-              className="bg-transparent border-b border-gray-600 py-2 px-4 w-full focus:outline-none focus:border-[#f0b90b]"
-            />
-            <button className="bg-[#f0b90b] text-black p-2 ml-2">
-              <ArrowRight className="h-5 w-5" />
-            </button>
           </div>
         </section>
       </main>
