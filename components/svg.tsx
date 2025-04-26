@@ -181,11 +181,28 @@ export function YouTube() {
 }
 
 
-export function SubDirect (){
-    return(
+export function SubDirect() {
+    return (
         <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M5.933 4.7155L7.219 6.0015L3.968 9.2435H12.268V0.1875H14.079V11.0545H3.968L7.219 14.2965L5.933 15.5825L0.5 10.1485L5.933 4.7155Z" fill="#EDB546"/>
+            <path d="M5.933 4.7155L7.219 6.0015L3.968 9.2435H12.268V0.1875H14.079V11.0545H3.968L7.219 14.2965L5.933 15.5825L0.5 10.1485L5.933 4.7155Z" fill="#EDB546" />
         </svg>
-        
+
     );
+}
+export function IncrimentIcon() {
+    return (
+        <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3.56699 0.75C3.75944 0.416667 4.24056 0.416667 4.43301 0.75L7.89711 6.75C8.08957 7.08333 7.849 7.5 7.4641 7.5H0.535898C0.150998 7.5 -0.0895646 7.08333 0.102885 6.75L3.56699 0.75Z" fill="#D9D9D9" />
+        </svg>
+
+    )
+}
+
+export function IconDic() {
+    return (
+        <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4.43301 7.25C4.24056 7.58333 3.75944 7.58333 3.56699 7.25L0.102885 1.25C-0.0895653 0.916667 0.150997 0.5 0.535897 0.5H7.4641C7.849 0.5 8.08956 0.916667 7.89711 1.25L4.43301 7.25Z" fill="#D9D9D9" />
+        </svg>
+
+    )
 }

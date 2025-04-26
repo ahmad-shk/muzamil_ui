@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { ChevronUp, ChevronDown } from "lucide-react"
+import {  IconDic, IncrimentIcon } from "./svg"
 
 export default function TradingInterface() {
   const [buyPrice, setBuyPrice] = useState("596.54")
@@ -14,7 +15,8 @@ export default function TradingInterface() {
   const percentages = [20, 30, 40, 50, 60]
 
   return (
-    <div className="w-full max-w-6xl rounded-lg border border-gray-600 -bg-[#1f2128] text-white p-4">
+    <div className="w-full max-w-6xl rounded-2xl border border-gray-700 text-white p-4">
+
       <div className="grid grid-cols-2 gap-x-6">
         {/* Buy Long Section */}
         <div>
@@ -25,7 +27,7 @@ export default function TradingInterface() {
 
           {/* Price Input */}
           <div className="mb-3">
-            <div className="flex overflow-hidden rounded-md bg-[#0e0f12]">
+            <div className="flex overflow-hidden rounded  border border-gray-700">
               <div className="flex-1 p-2">
                 <div className="flex items-center justify-between">
                   <label className="text-lg text-white">Price</label>
@@ -40,12 +42,19 @@ export default function TradingInterface() {
                   </div>
                 </div>
               </div>
-              <div className="flex w-12 flex-col border-l border-[#2a2e37]">
+              <div className="flex w-12 flex-col border-l border-gray-700">
                 <button className="flex-1 hover:bg-[#0e0f12]/80">
-                  <ChevronUp className="mx-auto h-4 w-4 text-white" />
+                  {/* <ChevronUp className="mx-auto h-4 w-4 text-white" />
+                   */}
+                   <div className="mx-auto h-4 w-4 text-white">
+                <IncrimentIcon  />
+                </div>
                 </button>
-                <button className="flex-1 border-t border-[#2a2e37] hover:bg-[#0e0f12]/80">
-                  <ChevronDown className="mx-auto h-4 w-4 text-white" />
+                <button className="flex-1 border-t border-gray-700 hover:bg-[#0e0f12]/80">
+                  {/* <ChevronDown className="mx-auto h-4 w-4 text-white" /> */}
+                  <div className="mx-auto h-4 w-4 text-white">
+                 <IconDic/>
+                 </div>
                 </button>
               </div>
             </div>
@@ -53,7 +62,7 @@ export default function TradingInterface() {
 
           {/* Amount Input */}
           <div className="mb-4">
-            <div className="flex overflow-hidden rounded-md bg-[#0e0f12]">
+            <div className="flex overflow-hidden rounded  border border-gray-700">
               <div className="flex-1 p-2">
                 <div className="flex items-center justify-between">
                   <label className="text-lg text-white">Amount</label>
@@ -68,12 +77,19 @@ export default function TradingInterface() {
                   </div>
                 </div>
               </div>
-              <div className="flex w-12 flex-col border-l border-[#2a2e37]">
-                <button className="flex-1 hover:bg-[#0e0f12]/80">
-                  <ChevronUp className="mx-auto h-4 w-4 text-white" />
+              <div className="flex w-12 flex-col border-l border-gray-700">
+              <button className="flex-1 hover:bg-[#0e0f12]/80">
+                  {/* <ChevronUp className="mx-auto h-4 w-4 text-white" />
+                   */}
+                   <div className="mx-auto h-4 w-4 text-white">
+                <IncrimentIcon  />
+                </div>
                 </button>
-                <button className="flex-1 border-t border-[#2a2e37] hover:bg-[#0e0f12]/80">
-                  <ChevronDown className="mx-auto h-4 w-4 text-white" />
+                <button className="flex-1 border-t border-gray-700 hover:bg-[#0e0f12]/80">
+                  {/* <ChevronDown className="mx-auto h-4 w-4 text-white" /> */}
+                  <div className="mx-auto h-4 w-4 text-white">
+                 <IconDic/>
+                 </div>
                 </button>
               </div>
             </div>
@@ -119,7 +135,7 @@ export default function TradingInterface() {
 
           {/* Price Input */}
           <div className="mb-3">
-            <div className="flex overflow-hidden rounded-md bg-[#0e0f12]">
+            <div className="flex overflow-hidden rounded  border border-gray-700">
               <div className="flex-1 p-2">
                 <div className="flex items-center justify-between">
                   <label className="text-lg text-white">Price</label>
@@ -134,12 +150,19 @@ export default function TradingInterface() {
                   </div>
                 </div>
               </div>
-              <div className="flex w-12 flex-col border-l border-[#2a2e37]">
-                <button className="flex-1 hover:bg-[#0e0f12]/80">
-                  <ChevronUp className="mx-auto h-4 w-4 text-white" />
+              <div className="flex w-12 flex-col border-l border-gray-700">
+              <button className="flex-1 hover:bg-[#0e0f12]/80">
+                  {/* <ChevronUp className="mx-auto h-4 w-4 text-white" />
+                   */}
+                   <div className="mx-auto h-4 w-4 text-white">
+                <IncrimentIcon  />
+                </div>
                 </button>
-                <button className="flex-1 border-t border-[#2a2e37] hover:bg-[#0e0f12]/80">
-                  <ChevronDown className="mx-auto h-4 w-4 text-white" />
+                <button className="flex-1 border-t border-gray-700 hover:bg-[#0e0f12]/80">
+                  {/* <ChevronDown className="mx-auto h-4 w-4 text-white" /> */}
+                  <div className="mx-auto h-4 w-4 text-white">
+                 <IconDic/>
+                 </div>
                 </button>
               </div>
             </div>
@@ -147,7 +170,7 @@ export default function TradingInterface() {
 
           {/* Amount Input */}
           <div className="mb-4">
-            <div className="flex overflow-hidden rounded-md bg-[#0e0f12]">
+            <div className="flex overflow-hidden rounded  border border-gray-700">
               <div className="flex-1 p-2">
                 <div className="flex items-center justify-between">
                   <label className="text-lg text-white">Amount</label>
@@ -162,12 +185,19 @@ export default function TradingInterface() {
                   </div>
                 </div>
               </div>
-              <div className="flex w-12 flex-col border-l border-[#2a2e37]">
-                <button className="flex-1 hover:bg-[#0e0f12]/80">
-                  <ChevronUp className="mx-auto h-4 w-4 text-white" />
+              <div className="flex w-12 flex-col border-l border-gray-700">
+              <button className="flex-1 hover:bg-[#0e0f12]/80">
+                  {/* <ChevronUp className="mx-auto h-4 w-4 text-white" />
+                   */}
+                   <div className="mx-auto h-4 w-4 text-white">
+                <IncrimentIcon  />
+                </div>
                 </button>
-                <button className="flex-1 border-t border-[#2a2e37] hover:bg-[#0e0f12]/80">
-                  <ChevronDown className="mx-auto h-4 w-4 text-white" />
+                <button className="flex-1 border-t border-gray-700 hover:bg-[#0e0f12]/80">
+                  {/* <ChevronDown className="mx-auto h-4 w-4 text-white" /> */}
+                  <div className="mx-auto h-4 w-4 text-white">
+                 <IconDic/>
+                 </div>
                 </button>
               </div>
             </div>
