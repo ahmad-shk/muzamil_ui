@@ -21,7 +21,7 @@ export default function Home() {
       {/* Main Content */}
       <main className="container mx-auto px-4 py-8">
         {/* Trading Pair Info */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-3 mb-3">
+
           <div className="flex flex-col md:flex-row items-start md:items-center gap-3 p-2.5 bg-[#14161b] rounded-lg">
             <div className="flex items-center gap-2">
               <div className="w-7 h-7 bg-[#edb546]/20 rounded-full flex items-center justify-center">
@@ -67,12 +67,6 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="p-2.5 bg-[#14161b] rounded-lg flex items-center">
-            <div className="relative">
-             <CryptoTable/>
-            </div>
-          </div>
-        </div>
 
         {/* Trading Interface */}
         <div className="grid grid-cols-1 lg:grid-cols-[320px_1fr_320px] gap-3">
@@ -87,23 +81,28 @@ export default function Home() {
               <TradingChart />
             </div>
             <div className="bg-[#14161b] rounded-lg overflow-hidden h-[142px]">
-              <TradingView />
+              {/* <TradingView /> */}
+              <BuySellPanel />
             </div>
           </div>
 
           {/* Market Trades and Buy/Sell */}
           <div className="flex flex-col gap-3">
             <div className="bg-[#14161b] rounded-lg overflow-hidden h-[200px]">
-              <MarketTrades />
+            <div className="p-2.5 bg-[#14161b] rounded-lg flex items-center">
+             <CryptoTable/>
+          </div>
             </div>
-            <div className="bg-[#14161b] rounded-lg overflow-hidden h-[220px]">
-              <BuySellPanel />
+            <div className="bg-[#14161b] rounded-lg overflow-hidden h-[220px]">        
+              <MarketTrades />
             </div>
             <div className="bg-[#14161b] rounded-lg overflow-hidden h-[72px]">
               <TopMovers />
             </div>
           </div>
-        </div>
+         </div>
+
+         
 
         {/* Order History */}
         <div className="mt-3 bg-[#14161b] rounded-lg overflow-hidden">
@@ -123,6 +122,7 @@ export default function Home() {
             to trade
           </p>
         </div>
+
       </main>
 
       {/* Footer */}
