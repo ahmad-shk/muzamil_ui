@@ -24,7 +24,7 @@ export default function Home() {
         {/* Trading Pair Info */}
         <div className="flex gap-3">
           <div className="flex flex-col gap-3 grow">
-            <div className="flex flex-col md:flex-row items-start md:items-center gap-3 p-2.5 bg-[#14161b] rounded-lg">
+            <div className="flex flex-col md:flex-row items-start md:items-center gap-3 py-4 px-3 bg-[#14161b] rounded-xl">
               <div className="flex items-center gap-2">
                 <div className="w-7 h-7 bg-[#edb546]/20 rounded-full flex items-center justify-center">
                   <span className="text-[#edb546] font-bold text-xs">B</span>
