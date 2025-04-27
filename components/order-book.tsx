@@ -30,7 +30,7 @@ const getBuyOrders = () => {
 }
 
   return (
-    <div className="rounded-xl border-2 border-gray-800 text-[14px] h-full pb-4 flex flex-col justify-between">
+    <div className="rounded-xl border-2 border-gray-800 text-[14px] min-h-full max-h-full pb-4 flex flex-col justify-between">
 
       <div className="border-b border-[#090a0c]">
         <div className="flex items-center justify-between px-4 py-1 pt-4">
@@ -42,7 +42,7 @@ const getBuyOrders = () => {
         <div className="border-b border-gray-800"></div> {/* Added line */}
       </div>
 
-      <div>
+      <div className="grow">
 
       <div className="flex gap-2 px-4 py-2 bg-[#090a0c]">
         <ViewToggle id={1} active={activeView === 1} onClick={() => setActiveView(1)} />
@@ -50,16 +50,16 @@ const getBuyOrders = () => {
         <ViewToggle id={3} active={activeView === 3} onClick={() => setActiveView(3)} />
       </div>
 
-      <div className="grid grid-cols-3 gap-12 px-4 text-[12px] text-white [&>*]:w-fit">
+      <div className="flex justify-between gap-8 px-4 pb-2 text-[12px] text-white">
         <div className="whitespace-nowrap">Price (USDT)</div>
-        <div>Amount (BNB)</div>
+        <div className="whitespace-nowrap text-left w-[100px]">Amount (BNB)</div>
         <div className="text-right">Total</div>
       </div>
 
       <div className="px-4">
         {/* Sell orders (red) */}
         {getSellOrders().map((order, index) => (
-          <div key={`sell-${index}`} className="flex py-[5px] justify-between">
+          <div key={`sell-${index}`} className="flex py-[4px] justify-between">
             <div className="text-[#f6465d]">{order.price}</div>
             <div className="text-[#edb546]">{order.amount}</div>
             <div className="text-right text-[#edb546]">{order.time}</div>
@@ -77,13 +77,15 @@ const getBuyOrders = () => {
         </div>
 
         {/* Buy orders (green) */}
+        <div className="">
         {getBuyOrders().map((order, index) => (
-          <div key={`buy-${index}`} className="flex justify-between py-[5px]">
+          <div key={`buy-${index}`} className="flex justify-between py-[4px]">
             <div className="text-[#15b34c]">{order.price}</div>
             <div className="text-[#edb546]">{order.amount}</div>
             <div className="text-right text-[#edb546]">{order.time}</div>
           </div>
         ))}
+        </div>
       </div>
       </div>
 
