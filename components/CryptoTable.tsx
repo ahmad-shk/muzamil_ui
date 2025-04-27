@@ -1,52 +1,7 @@
 "use client";
 
 import { useState } from "react";
-
-interface Coin {
-  iconUrl: string;
-  name: string;
-  lastPrice: number;
-  secondPrice: number;
-  change: number;
-}
-
-const coins: Coin[] = [
-  {
-    iconUrl: "/Group.png", // Apni public folder mein icons daal dena
-    name: "BNB",
-    lastPrice: 0.2074,
-    secondPrice: 0.2074,
-    change: 1.03,
-  },
-  {
-    iconUrl: "/Group (1).png",
-    name: "ETH",
-    lastPrice: 0.1641,
-    secondPrice: 0.2074,
-    change: 11.0,
-  },
-  {
-    iconUrl: "/Group (2).png",
-    name: "BTC",
-    lastPrice: 0.3887,
-    secondPrice: 0.2074,
-    change: 5.03,
-  },
-  {
-    iconUrl: "/Group.png",
-    name: "BNB",
-    lastPrice: 0.2074,
-    secondPrice: 0.2074,
-    change: 1.03,
-  },
-  {
-    iconUrl: "/Group (1).png",
-    name: "ETH",
-    lastPrice: 0.1641,
-    secondPrice: 0.2074,
-    change: 11.0,
-  },
-];
+import { coins } from "./payloads";
 
 export default function CryptoTable() {
   const [search, setSearch] = useState("");
