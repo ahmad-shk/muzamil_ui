@@ -58,7 +58,7 @@ const getBuyOrders = () => {
 
       <div className="px-4">
         {/* Sell orders (red) */}
-        <div className="bg-[red]"> 
+        <div className="bg-[red] overflow-hidden"> 
         {getSellOrders().map((order, index) => (
           <div key={`sell-${index}`} className="flex py-[4px] justify-between">
             <div className="text-[#f6465d]">{order.price}</div>
@@ -79,7 +79,7 @@ const getBuyOrders = () => {
         </div>
 
         {/* Buy orders (green) */}
-        <div className="bg-[green]">
+        <div className="bg-[green] overflow-scroll">
         {getBuyOrders().map((order, index) => (
           <div key={`buy-${index}`} className="flex justify-between py-[4px]">
             <div className="text-[#15b34c]">{order.price}</div>
