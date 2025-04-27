@@ -9,20 +9,25 @@ export default function OrderBook() {
 
 
   // Function to determine how many sell orders to show
-  const getSellOrders = () => {
-    if (activeView === 1 || activeView === 3) {
-      return sellOrders.slice(0, activeView === 1 ? 8 : 17);
-    }
-    return [];
+ // Function to determine how many sell orders to show
+const getSellOrders = () => {
+  if (activeView === 1) {
+    return sellOrders.slice(0, 13);
+  } else if (activeView === 3) {
+    return sellOrders.slice(0, 25);
   }
+  return [];
+}
 
-  // Function to determine how many buy orders to show
-  const getBuyOrders = () => {
-    if (activeView === 1 || activeView === 2) {
-      return buyOrders.slice(0, activeView === 1 ? 9 : 17);
-    }
-    return [];
+// Function to determine how many buy orders to show
+const getBuyOrders = () => {
+  if (activeView === 1) {
+    return buyOrders.slice(0, 12);
+  } else if (activeView === 2) {
+    return buyOrders.slice(0, 25);
   }
+  return [];
+}
 
   return (
     <div className="rounded-xl border-2 border-gray-800 text-[14px] h-full pb-4 flex flex-col justify-between">
