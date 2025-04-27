@@ -58,6 +58,7 @@ const getBuyOrders = () => {
 
       <div className="px-4">
         {/* Sell orders (red) */}
+        <div className="bg-[red]"> 
         {getSellOrders().map((order, index) => (
           <div key={`sell-${index}`} className="flex py-[4px] justify-between">
             <div className="text-[#f6465d]">{order.price}</div>
@@ -65,6 +66,7 @@ const getBuyOrders = () => {
             <div className="text-right text-[#edb546]">{order.time}</div>
           </div>
         ))}
+        </div>
 
         {/* Current price indicator */}
         <div className="flex items-center justify-between py-4 border-y border-[#090a0c]">
@@ -77,7 +79,7 @@ const getBuyOrders = () => {
         </div>
 
         {/* Buy orders (green) */}
-        <div className="">
+        <div className="bg-[green]">
         {getBuyOrders().map((order, index) => (
           <div key={`buy-${index}`} className="flex justify-between py-[4px]">
             <div className="text-[#15b34c]">{order.price}</div>
