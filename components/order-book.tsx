@@ -30,7 +30,7 @@ const getBuyOrders = () => {
 }
 
   return (
-    <div className="rounded-xl border-2 border-gray-800 text-[14px] min-h-full max-h-full pb-4 flex flex-col justify-between">
+    <div className="rounded-xl border-2 border-gray-800 text-[14px] max-h-[928px] pb-4 flex flex-col justify-between overflow-y-scroll">
 
       <div className="border-b border-[#090a0c]">
         <div className="flex items-center justify-between px-4 py-1 pt-4">
@@ -77,7 +77,7 @@ const getBuyOrders = () => {
         </div>
 
         {/* Buy orders (green) */}
-        <div className="">
+        <div className="pb-4">
         {getBuyOrders().map((order, index) => (
           <div key={`buy-${index}`} className="flex justify-between py-[4px]">
             <div className="text-[#15b34c]">{order.price}</div>

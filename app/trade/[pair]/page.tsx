@@ -38,7 +38,7 @@ export default function Home() {
                   </button>
 
                   <div className="flex flex-col">
-                    <span className="text-[#edb546] text-base font-bold">BNB/USDT</span>
+                    <span className="text-[#edb546] text-base font-bold text-[18px]">BNB/USDT</span>
                     <span className="text-[#edb546] text-xs">BNB Price</span>
                   </div>
                 </div>
