@@ -25,7 +25,7 @@ export default function OrderBook() {
   }
 
   return (
-    <div className="rounded-xl border-2 border-gray-800 text-[14px] h-full pb-4">
+    <div className="rounded-xl border-2 border-gray-800 text-[14px] h-full pb-4 flex flex-col justify-between">
 
       <div className="border-b border-[#090a0c]">
         <div className="flex items-center justify-between px-4 py-1 pt-4">
@@ -36,6 +36,8 @@ export default function OrderBook() {
         </div>
         <div className="border-b border-gray-800"></div> {/* Added line */}
       </div>
+
+      <div>
 
       <div className="flex gap-2 px-4 py-2 bg-[#090a0c]">
         <ViewToggle id={1} active={activeView === 1} onClick={() => setActiveView(1)} />
@@ -77,6 +79,7 @@ export default function OrderBook() {
             <div className="text-right text-[#edb546]">{order.time}</div>
           </div>
         ))}
+      </div>
       </div>
 
       {/* Progress bar */}
