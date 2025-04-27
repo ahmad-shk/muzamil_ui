@@ -33,9 +33,10 @@ export default function MarketTrades() {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`pb-3 ${
+              className={`pb-1 pt-2 relative before:content-[''] before:absolute before:bottom-0 
+                ${
                 activeTab === tab.id
-                  ? "text-[#EDB546] border-b-2 border-[#EDB546]"
+                  ? "text-[#EDB546] border-[#EDB546]"
                   : "text-[#8e8e8e]"
               } transition-colors duration-200`}
             >
@@ -53,18 +54,18 @@ export default function MarketTrades() {
       <div className="border-b border-[#1f2128] mt-2" />
 
       {/* Table Header */}
-      <div className="grid grid-cols-3 px-4 py-2 text-[10px] font-semibold text-white/60 border-b border-[#1f2128]">
+      <div className="py-2 px-4 flex justify-between text-[12px] font-semibold text-white/60">
         <div>Price (USDT)</div>
-        <div>Amount (BNB)</div>
+        <div className="w-[100px]">Amount (BNB)</div>
         <div>Time</div>
       </div>
 
       {/* Trades List */}
-      <div className="flex-1 overflow-y-auto overflow-x-hidden custom-scrollbar">
+      <div className="flex-1 overflow-y-auto custom-scrollbar">
         {trades.map((trade, index) => (
           <div
             key={index}
-            className="grid grid-cols-3 items-center px-4 py-1.5 text-[10px]  hover:bg-[#1f2128]/30 transition"
+            className="flex justify-between items-center px-4 py-1.5 text-[10px]  hover:bg-[#1f2128]/30 transition"
           >
             <div className={trade.type === "buy" ? "text-green-500" : "text-red-500"}>
               {trade.type === "buy" ? "+1.03%" : "-1.03%"}
