@@ -25,11 +25,11 @@ export default function OrderBook() {
   }
 
   return (
-    <div className="w-full max-w-md rounded-3xl border-2 border-gray-800 -bg-[#1f2128] overflow-hidden">
+    <div className="rounded-xl border-2 border-gray-800 text-[14px] h-full pb-4">
 
       <div className="border-b border-[#090a0c]">
-        <div className="flex items-center justify-between px-4 py-3">
-          <h1 className="text-xl font-medium text-[#edb546]">Order Book</h1>
+        <div className="flex items-center justify-between px-4 py-1 pt-4">
+          <h1 className="font-semibold text-[#edb546]">Order Book</h1>
           <button className="text-white">
             <MoreHorizontal size={20} />
           </button>
@@ -43,8 +43,8 @@ export default function OrderBook() {
         <ViewToggle id={3} active={activeView === 3} onClick={() => setActiveView(3)} />
       </div>
 
-      <div className="grid grid-cols-3 px-4 py-3 text-white">
-        <div>Price (USDT)</div>
+      <div className="grid grid-cols-3 gap-12 px-4 text-[12px] text-white [&>*]:w-fit">
+        <div className="whitespace-nowrap">Price (USDT)</div>
         <div>Amount (BNB)</div>
         <div className="text-right">Total</div>
       </div>
@@ -52,7 +52,7 @@ export default function OrderBook() {
       <div className="px-4">
         {/* Sell orders (red) */}
         {getSellOrders().map((order, index) => (
-          <div key={`sell-${index}`} className="grid grid-cols-3 py-1">
+          <div key={`sell-${index}`} className="flex py-[5px] justify-between">
             <div className="text-[#f6465d]">{order.price}</div>
             <div className="text-[#edb546]">{order.amount}</div>
             <div className="text-right text-[#edb546]">{order.time}</div>
@@ -60,18 +60,18 @@ export default function OrderBook() {
         ))}
 
         {/* Current price indicator */}
-        <div className="flex items-center justify-between py-2 border-y border-[#090a0c]">
-          <div className="flex items-center">
-            <span className="text-[#15b34c] text-xl font-medium">596.83</span>
+        <div className="flex items-center justify-between py-4 border-y border-[#090a0c]">
+          <div className="flex items-end justify-center">
+            <span className="text-[#15b34c] leading-[100%] font-[600] text-[20px]">596.83</span>
             <span className="text-[#15b34c] ml-1">↑</span>
-            <span className="text-white ml-2">$597.73</span>
+            <span className="text-white text-[12px] px-1">$597.73</span>
           </div>
           <ChevronRight className="text-[#edb546]" size={20} />
         </div>
 
         {/* Buy orders (green) */}
         {getBuyOrders().map((order, index) => (
-          <div key={`buy-${index}`} className="grid grid-cols-3 py-1">
+          <div key={`buy-${index}`} className="flex justify-between py-[5px]">
             <div className="text-[#15b34c]">{order.price}</div>
             <div className="text-[#edb546]">{order.amount}</div>
             <div className="text-right text-[#edb546]">{order.time}</div>
@@ -80,14 +80,14 @@ export default function OrderBook() {
       </div>
 
       {/* Progress bar */}
-      <div className="px-4 py-3 mt-2">
-        <div className="flex items-center justify-between text-sm mb-1">
+      <div className="px-4 text-[12px] flex gap-2">
+        <div className="flex items-center grow gap-1.5">
           <div className="text-[#15b34c]">B 50.60%</div>
-          <div className="text-[#f6465d]">53.21% S</div>
+          <div className="grow h-1.5 bg-[#15b34c]"></div>
         </div>
-        <div className="flex h-1.5 w-full overflow-hidden rounded-full">
-          <div className="bg-[#15b34c] w-[50.6%]"></div>
-          <div className="bg-[#f6465d] w-[49.4%]"></div>
+        <div className="flex items-center grow gap-1.5">
+          <div className="grow h-1.5 bg-[#f6465d]"></div>
+          <div className="text-[#f6465d]">53.21% S</div>
         </div>
       </div>
     </div>

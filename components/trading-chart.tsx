@@ -9,7 +9,7 @@ export default function TradingChart() {
   const timeframes = ["1m", "5m", "15m", "1h", "4h", "1d", "1w", "1M"]
 
   return (
-    <div className="h-full flex flex-col w-[600px]">
+    <div className="h-full flex flex-col">
       <div className="flex items-center justify-between px-2 py-1 border-b border-[#1f2128]">
         <div className="flex items-center gap-1">
           <div className="flex">
