@@ -12,9 +12,9 @@ export default function OrderBook() {
  // Function to determine how many sell orders to show
 const getSellOrders = () => {
   if (activeView === 1) {
-    return sellOrders.slice(0, 13);
+    return sellOrders.slice(0, 8);
   } else if (activeView === 3) {
-    return sellOrders.slice(0, 25);
+    return sellOrders.slice(0, 21);
   }
   return [];
 }
@@ -22,9 +22,9 @@ const getSellOrders = () => {
 // Function to determine how many buy orders to show
 const getBuyOrders = () => {
   if (activeView === 1) {
-    return buyOrders.slice(0, 12);
+    return buyOrders.slice(0, 13);
   } else if (activeView === 2) {
-    return buyOrders.slice(0, 25);
+    return buyOrders.slice(0, 21);
   }
   return [];
 }
