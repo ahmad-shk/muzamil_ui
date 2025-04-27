@@ -1,32 +1,6 @@
-export const sellOrders = [{ price: "596.68", amount: "0.171", time: "02:42:01" }, { price: "596.67", amount: "0.446", time: "02:42:01" }, { price: "595.68", amount: "3.602", time: "02:42:01" }, { price: "596.68", amount: "32.633", time: "02:42:01" }, { price: "596.68", amount: "0.225", time: "02:42:01" }, { price: "596.68", amount: "0.045", time: "02:42:01" }, { price: "596.68", amount: "0.020", time: "02:42:01" }, { price: "596.68", amount: "0.045", time: "02:42:01" }, { price: "596.68", amount: "0.171", time: "02:42:01" }, { price: "596.67", amount: "0.446", time: "02:42:01" }, { price: "595.68", amount: "3.602", time: "02:42:01" }, { price: "596.68", amount: "32.633", time: "02:42:01" }, { price: "596.68", amount: "0.225", time: "02:42:01" }, { price: "596.68", amount: "0.045", time: "02:42:01" }, { price: "596.68", amount: "0.020", time: "02:42:01" }, { price: "596.68", amount: "0.045", time: "02:42:01" }, { price: "596.68", amount: "0.045", time: "02:42:01" }];
-export const buyOrders = [{ price: "596.68", amount: "0.045", time: "02:42:01" }, { price: "596.68", amount: "0.020", time: "02:42:01" }, { price: "596.68", amount: "0.045", time: "02:42:01" }, { price: "596.68", amount: "0.045", time: "02:42:01" }, { price: "596.68", amount: "0.045", time: "02:42:01" }, { price: "596.68", amount: "0.045", time: "02:42:01" }, { price: "596.68", amount: "0.045", time: "02:42:01" }, { price: "596.68", amount: "0.045", time: "02:42:01" }, { price: "596.68", amount: "0.045", time: "02:42:01" }, { price: "596.68", amount: "0.045", time: "02:42:01" }, { price: "596.68", amount: "0.020", time: "02:42:01" }, { price: "596.68", amount: "0.045", time: "02:42:01" }, { price: "596.68", amount: "0.045", time: "02:42:01" }, { price: "596.68", amount: "0.045", time: "02:42:01" }, { price: "596.68", amount: "0.045", time: "02:42:01" }, { price: "596.68", amount: "0.045", time: "02:42:01" }, { price: "596.68", amount: "0.045", time: "02:42:01" }];
-export const tokenData = [
-  {
-    name: "BNB",
-    img: "/Group.png",
-    price: "$120.00",
-    change: "+1.03%",
-    volume: "$500M",
-    marketCap: "$20B",
-    arrow: "/Frame.png",
-  },
-  {
-    name: "BTC",
-    img: "/Group (1).png",
-    price: "$31.52K",
-    change: "+5.03%",
-    volume: "$25B",
-    marketCap: "$600B",
-    arrow: "/Frame.png",
-  },
-  {
-    name: "ETH",
-    img: "/Group (2).png",
-    price: "$1.52K",
-    change: "+11.00%",
-    volume: "$10B",
-    marketCap: "$200B",
-    arrow: "/Frame.png",
-  },
-  // Tum repeat na karna real project mein, ye sirf example ke liye hain
-];
+//order book Data
+export const sellOrders = [{ price: "596.68", amount: "0.171", time: "02:42:01" }, { price: "596.67", amount: "0.446", time: "02:42:01" },{ price: "596.68", amount: "0.171", time: "02:42:01" }, { price: "596.67", amount: "0.446", time: "02:42:01" },{ price: "596.68", amount: "0.171", time: "02:42:01" }, { price: "596.67", amount: "0.446", time: "02:42:01" }, { price: "595.68", amount: "3.602", time: "02:42:01" }, { price: "596.68", amount: "32.633", time: "02:42:01" }, { price: "596.68", amount: "0.225", time: "02:42:01" }, { price: "596.68", amount: "0.045", time: "02:42:01" }, { price: "596.68", amount: "0.020", time: "02:42:01" }, { price: "596.68", amount: "0.045", time: "02:42:01" }, { price: "596.68", amount: "0.171", time: "02:42:01" }, { price: "596.67", amount: "0.446", time: "02:42:01" }, { price: "595.68", amount: "3.602", time: "02:42:01" }, { price: "596.68", amount: "32.633", time: "02:42:01" }, { price: "596.68", amount: "0.225", time: "02:42:01" }, { price: "596.68", amount: "0.045", time: "02:42:01" }, { price: "596.68", amount: "0.020", time: "02:42:01" }, { price: "596.68", amount: "0.045", time: "02:42:01" }, { price: "596.68", amount: "0.045", time: "02:42:01" }];
+export const buyOrders = [{ price: "596.68", amount: "0.045", time: "02:42:01" }, { price: "596.68", amount: "0.020", time: "02:42:01" },{ price: "596.68", amount: "0.045", time: "02:42:01" }, { price: "596.68", amount: "0.020", time: "02:42:01" },{ price: "596.68", amount: "0.045", time: "02:42:01" }, { price: "596.68", amount: "0.020", time: "02:42:01" }, { price: "596.68", amount: "0.045", time: "02:42:01" }, { price: "596.68", amount: "0.045", time: "02:42:01" }, { price: "596.68", amount: "0.045", time: "02:42:01" }, { price: "596.68", amount: "0.045", time: "02:42:01" }, { price: "596.68", amount: "0.045", time: "02:42:01" }, { price: "596.68", amount: "0.045", time: "02:42:01" }, { price: "596.68", amount: "0.045", time: "02:42:01" }, { price: "596.68", amount: "0.045", time: "02:42:01" }, { price: "596.68", amount: "0.020", time: "02:42:01" }, { price: "596.68", amount: "0.045", time: "02:42:01" }, { price: "596.68", amount: "0.045", time: "02:42:01" }, { price: "596.68", amount: "0.045", time: "02:42:01" }, { price: "596.68", amount: "0.045", time: "02:42:01" }, { price: "596.68", amount: "0.045", time: "02:42:01" }, { price: "596.68", amount: "0.045", time: "02:42:01" }];
+
+////market component data
+export const tokenData = [{ name: "BNB", img: "/Group.png", price: "$120.00", change: "+1.03%", volume: "$500M", marketCap: "$20B", arrow: "/Frame.png" },{ name: "BNB", img: "/Group.png", price: "$120.00", change: "+1.03%", volume: "$500M", marketCap: "$20B", arrow: "/Frame.png" },{ name: "BNB", img: "/Group.png", price: "$120.00", change: "+1.03%", volume: "$500M", marketCap: "$20B", arrow: "/Frame.png" },{ name: "BNB", img: "/Group.png", price: "$120.00", change: "+1.03%", volume: "$500M", marketCap: "$20B", arrow: "/Frame.png" },{ name: "BNB", img: "/Group.png", price: "$120.00", change: "+1.03%", volume: "$500M", marketCap: "$20B", arrow: "/Frame.png" }, { name: "BTC", img: "/Group (1).png", price: "$31.52K", change: "+5.03%", volume: "$25B", marketCap: "$600B", arrow: "/Frame.png" }, { name: "ETH", img: "/Group (2).png", price: "$1.52K", change: "+11.00%", volume: "$10B", marketCap: "$200B", arrow: "/Frame.png" }];
