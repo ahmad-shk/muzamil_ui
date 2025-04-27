@@ -26,7 +26,7 @@ export default function Home() {
         <div className="flex gap-3">
           <div className="flex flex-col gap-3 grow">
 
-            <div className="w-full rounded-2xl px-3 py-2 shadow-lg border border-gray-800 bg-[#090A0CCC]">
+            <div className="w-full rounded-2xl p-3 border border-gray-800 bg-[#090A0CCC]">
               <div className="flex items-center justify-between text-white text-sm">
                 <div className="flex items-center gap-1">
                   <button className="flex items-center justify-center w-8 h-8  text-gray-400 hover:text-[#edb546] transition-colors">
@@ -38,8 +38,8 @@ export default function Home() {
                   </button>
 
                   <div className="flex flex-col">
-                    <span className="text-[#edb546] text-base font-bold text-[18px]">BNB/USDT</span>
-                    <span className="text-[#edb546] text-xs">BNB Price</span>
+                    <span className="text-[#edb546] text-base font-semibold text-[18px]">BNB/USDT</span>
+                    <span className="text-[#edb546] text-[14px]">BNB Price</span>
                   </div>
                 </div>
 
