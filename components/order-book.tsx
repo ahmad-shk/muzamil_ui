@@ -1,124 +1,143 @@
 "use client"
 
 import { useState } from "react"
-import { MoreHorizontal } from "lucide-react"
+import { ChevronRight, MoreHorizontal } from "lucide-react"
+import { buyOrders, sellOrders } from "./payloads"
 
 export default function OrderBook() {
-  const [activeTab, setActiveTab] = useState<"buy" | "sell" | "all">("all")
+  const [activeView, setActiveView] = useState(1)
 
-  const sellOrders = [
-    { price: 596.68, amount: 0.171 },
-    { price: 596.67, amount: 0.446 },
-    { price: 596.68, amount: 3.602 },
-    { price: 596.68, amount: 32.633 },
-    { price: 596.68, amount: 0.225 },
-    { price: 596.68, amount: 0.045 },
-    { price: 596.68, amount: 0.020 },
-    { price: 596.68, amount: 0.045 },
-  ]
 
-  const buyOrders = [
-    { price: 596.68, amount: 0.171 },
-    { price: 596.67, amount: 0.446 },
-    { price: 596.68, amount: 3.602 },
-    { price: 596.68, amount: 32.633 },
-    { price: 596.68, amount: 0.225 },
-    { price: 596.68, amount: 0.045 },
-    { price: 596.68, amount: 0.020 },
-    { price: 596.68, amount: 0.045 },
-    { price: 596.68, amount: 0.045 },
-    { price: 596.68, amount: 0.045 },
-  ]
+  // Function to determine how many sell orders to show
+  const getSellOrders = () => {
+    if (activeView === 1 || activeView === 3) {
+      return sellOrders.slice(0, activeView === 1 ? 8 : 17);
+    }
+    return [];
+  }
+
+  // Function to determine how many buy orders to show
+  const getBuyOrders = () => {
+    if (activeView === 1 || activeView === 2) {
+      return buyOrders.slice(0, activeView === 1 ? 9 : 17);
+    }
+    return [];
+  }
 
   return (
-    <div className="h-full flex flex-col">
-      {/* Header */}
-      <div className="flex items-center justify-between px-3 py-2 border-b border-[#1f2128]">
-        <h3 className="font-semibold text-xs">Order Book</h3>
-        <MoreHorizontal className="h-4 w-4 text-[#6f6a6b]" />
+    <div className="w-full max-w-md rounded-3xl border-2 border-gray-800 -bg-[#1f2128] overflow-hidden">
+
+      <div className="border-b border-[#090a0c]">
+        <div className="flex items-center justify-between px-4 py-3">
+          <h1 className="text-xl font-medium text-[#edb546]">Order Book</h1>
+          <button className="text-white">
+            <MoreHorizontal size={20} />
+          </button>
+        </div>
+        <div className="border-b border-gray-800"></div> {/* Added line */}
       </div>
 
-      {/* Tabs */}
-      <div className="flex text-[10px] font-medium border-b border-[#1f2128]">
-        {["buy", "all", "sell"].map((tab) => (
-          <button
-            key={tab}
-            onClick={() => setActiveTab(tab as "buy" | "sell" | "all")}
-            className={`flex-1 py-1 ${
-              activeTab === tab
-                ? tab === "buy"
-                  ? "text-[#0ecb81] border-b-2 border-[#0ecb81]"
-                  : tab === "sell"
-                  ? "text-[#f6465d] border-b-2 border-[#f6465d]"
-                  : "text-white border-b-2 border-white"
-                : "text-[#6f6a6b]"
-            }`}
-          >
-            {tab.charAt(0).toUpperCase() + tab.slice(1)}
-          </button>
+      <div className="flex gap-2 px-4 py-2 bg-[#090a0c]">
+        <ViewToggle id={1} active={activeView === 1} onClick={() => setActiveView(1)} />
+        <ViewToggle id={2} active={activeView === 2} onClick={() => setActiveView(2)} />
+        <ViewToggle id={3} active={activeView === 3} onClick={() => setActiveView(3)} />
+      </div>
+
+      <div className="grid grid-cols-3 px-4 py-3 text-white">
+        <div>Price (USDT)</div>
+        <div>Amount (BNB)</div>
+        <div className="text-right">Total</div>
+      </div>
+
+      <div className="px-4">
+        {/* Sell orders (red) */}
+        {getSellOrders().map((order, index) => (
+          <div key={`sell-${index}`} className="grid grid-cols-3 py-1">
+            <div className="text-[#f6465d]">{order.price}</div>
+            <div className="text-[#edb546]">{order.amount}</div>
+            <div className="text-right text-[#edb546]">{order.time}</div>
+          </div>
+        ))}
+
+        {/* Current price indicator */}
+        <div className="flex items-center justify-between py-2 border-y border-[#090a0c]">
+          <div className="flex items-center">
+            <span className="text-[#15b34c] text-xl font-medium">596.83</span>
+            <span className="text-[#15b34c] ml-1">↑</span>
+            <span className="text-white ml-2">$597.73</span>
+          </div>
+          <ChevronRight className="text-[#edb546]" size={20} />
+        </div>
+
+        {/* Buy orders (green) */}
+        {getBuyOrders().map((order, index) => (
+          <div key={`buy-${index}`} className="grid grid-cols-3 py-1">
+            <div className="text-[#15b34c]">{order.price}</div>
+            <div className="text-[#edb546]">{order.amount}</div>
+            <div className="text-right text-[#edb546]">{order.time}</div>
+          </div>
         ))}
       </div>
 
-      {/* Column Titles */}
-      <div className="grid grid-cols-3 text-[10px] text-[#6f6a6b] px-3 py-2 border-b border-[#1f2128]">
-        <div>Price (USDT)</div>
-        <div>Amount (BNB)</div>
-        <div>Total</div>
-      </div>
-
-      {/* Orders */}
-      <div className="flex-1 overflow-auto text-[10px]">
-        {(activeTab === "all" || activeTab === "sell") && (
-          <>
-            {sellOrders.map((order, i) => (
-              <div key={`sell-${i}`} className="relative flex justify-between px-3 py-1 gap-16 border-b border-[#1f2128]">
-                <div className="text-left text-[#f6465d] z-10">{order.price.toFixed(2)}</div>
-                <div className="z-10">{order.amount.toFixed(3)}</div>
-                <div className="z-10">{(order.price * order.amount).toFixed(2)}</div>
-                <div
-                  className="absolute left-0 top-0 h-full bg-[#f6465d]/10"
-                  style={{ width: `${Math.min(order.amount * 2, 100)}%` }}
-                />
-              </div>
-            ))}
-          </>
-        )}
-
-        {/* Current Price Row */}
-        <div className="grid grid-cols-3 px-3 py-2 text-[11px] font-semibold text-white items-center justify-center text-center bg-[#1f2128]">
-          <div className="text-[#0ecb81]">596.83</div>
-          <div className="text-[#6f6a6b] text-[10px]">$597.73</div>
-          <div className="text-[#6f6a6b] text-[10px]">▶</div>
+      {/* Progress bar */}
+      <div className="px-4 py-3 mt-2">
+        <div className="flex items-center justify-between text-sm mb-1">
+          <div className="text-[#15b34c]">B 50.60%</div>
+          <div className="text-[#f6465d]">53.21% S</div>
         </div>
-
-        {(activeTab === "all" || activeTab === "buy") && (
-          <>
-            {buyOrders.map((order, i) => (
-              <div key={`buy-${i}`} className="relative flex justify-between px-3 py-1 gap-16 border-b border-[#1f2128]">
-                <div className="text-left text-[#0ecb81] z-10">{order.price.toFixed(2)}</div>
-                <div className="z-10">{order.amount.toFixed(3)}</div>
-                <div className="z-10">{(order.price * order.amount).toFixed(2)}</div>
-                <div
-                  className="absolute left-0 top-0 h-full bg-[#0ecb81]/10"
-                  style={{ width: `${Math.min(order.amount * 2, 100)}%` }}
-                />
-              </div>
-            ))}
-          </>
-        )}
-      </div>
-
-      {/* Volume Bar */}
-      <div className="px-3 py-2 border-t border-[#1f2128]">
-        <div className="flex items-center justify-between text-[10px] text-[#6f6a6b] mb-1">
-          <span className="text-[#0ecb81]">50.60% B</span>
-          <span className="text-[#f6465d]">53.21% S</span>
-        </div>
-        <div className="relative h-1 bg-[#1f2128] rounded-full overflow-hidden">
-          <div className="absolute left-0 top-0 h-full bg-[#0ecb81]" style={{ width: "50.60%" }} />
-          <div className="absolute right-0 top-0 h-full bg-[#f6465d]" style={{ width: "53.21%" }} />
+        <div className="flex h-1.5 w-full overflow-hidden rounded-full">
+          <div className="bg-[#15b34c] w-[50.6%]"></div>
+          <div className="bg-[#f6465d] w-[49.4%]"></div>
         </div>
       </div>
     </div>
+  )
+}
+
+function ViewToggle({ id, active, onClick }: { id: number; active: boolean; onClick: () => void }) {
+  return (
+    <button
+      onClick={onClick}
+      className={`flex h-6 w-6 items-center justify-center rounded ${active ? "bg-[#1f2128]" : "bg-transparent"}`}
+    >
+      <div className="relative">
+        {/* Colored indicators */}
+        {id === 1 && (
+          <>
+            <svg width="11" height="9" viewBox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="4" height="4" fill="#F6465D" />
+              <rect x="5" width="6" height="2" fill="#D9D9D9" />
+              <rect x="5" y="3.5" width="6" height="2" fill="#D9D9D9" />
+              <rect x="5" y="7" width="6" height="2" fill="#D9D9D9" />
+              <rect y="5" width="4" height="4" fill="#15B34C" />
+            </svg>
+
+
+          </>
+        )}
+        {id === 2 && (
+          <>
+            <svg width="11" height="9" viewBox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="5" width="6" height="2" fill="#D9D9D9" />
+              <rect x="5" y="3.5" width="6" height="2" fill="#D9D9D9" />
+              <rect x="5" y="7" width="6" height="2" fill="#D9D9D9" />
+              <rect width="4" height="9" fill="#15B34C" />
+            </svg>
+
+          </>
+        )}
+        {id === 3 && (
+          <>
+            <svg width="11" height="9" viewBox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="5" width="6" height="2" fill="#D9D9D9" />
+              <rect x="5" y="3.5" width="6" height="2" fill="#D9D9D9" />
+              <rect x="5" y="7" width="6" height="2" fill="#D9D9D9" />
+              <rect width="4" height="9" fill="#F6465D" />
+            </svg>
+
+          </>
+        )}
+      </div>
+    </button>
   )
 }
