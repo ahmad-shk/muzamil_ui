@@ -61,7 +61,7 @@ export default function TradingInterface() {
           </div>
 
           {/* Amount Input */}
-          <div className="mb-4">
+          <div className="mb-6">
             <div className="flex rounded border border-gray-700">
               <div className="flex-1 px-4 py-3">
                 <div className="flex items-center justify-between gap-2">
@@ -93,11 +93,11 @@ export default function TradingInterface() {
           </div>
 
           {/* Percentage Selector */}
-          <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
+          <div className="mb-4 flex relative items-center justify-between gap-2">
             {percentages.map((percent) => (
-              <div key={`buy-${percent}`} className="flex flex-col items-center">
+              <div key={`buy-${percent}`} className="flex flex-col items-center relative z-[1]">
                 <button
-                  className={`h-6 w-6 rotate-45 ${
+                  className={`h-[8px] w-[8px] rotate-45 ${
                     buyPercentage === percent
                       ? "bg-[#edb546]"
                       : "border border-[#edb546]"
@@ -107,10 +107,11 @@ export default function TradingInterface() {
                 <span className="mt-1 text-white">{percent}%</span>
               </div>
             ))}
+            <div className="absolute w-[90%] h-[2px] top-[5%] left-[5%] z-[0] bg-[#1F2128]"></div>
           </div>
 
           {/* AVBL and Max Buy */}
-          <div className="mb-2 flex justify-between">
+          <div className="pb-2 pt-2.5 flex justify-between">
             <span className="text-white">AVBL</span>
             <span className="text-white">- USDT</span>
           </div>
@@ -162,7 +163,7 @@ export default function TradingInterface() {
   
 
           {/* Amount Input */}
-          <div className="mb-4">
+          <div className="mb-6">
             <div className="flex overflow-hidden rounded border border-gray-700">
               <div className="flex-1 px-4 py-3">
                 <div className="flex items-center justify-between gap-2">
@@ -194,11 +195,11 @@ export default function TradingInterface() {
           </div>
 
           {/* Percentage Selector */}
-          <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
+          <div className="mb-4 flex relative items-center justify-between gap-2">
             {percentages.map((percent) => (
-              <div key={`sell-${percent}`} className="flex flex-col items-center">
+              <div key={`sell-${percent}`} className="flex flex-col relative z-[1] items-center">
                 <button
-                  className={`h-6 w-6 rotate-45 ${
+                  className={`h-[8px] w-[8px] rotate-45 ${
                     sellPercentage === percent
                       ? "bg-[#edb546]"
                       : "border border-[#edb546]"
@@ -208,10 +209,11 @@ export default function TradingInterface() {
                 <span className="mt-1  text-white">{percent}%</span>
               </div>
             ))}
+             <div className="absolute w-[90%] h-[2px] top-[5%] left-[5%] z-[0] bg-[#1F2128]"></div>
           </div>
 
           {/* AVBL and Max Sell */}
-          <div className="mb-2 flex justify-between ">
+          <div className="pb-2 pt-2.5 flex justify-between ">
             <span className="text-white">AVBL</span>
             <span className="text-white">-- BNB</span>
           </div>
