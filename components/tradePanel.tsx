@@ -68,19 +68,25 @@ export default function TradingInterface() {
 
           {/* Percentage Selector */}
           <div className="mb-4 flex relative items-center justify-between gap-2">
-            {percentages.map((percent) => (
-              <div key={`buy-${percent}`} className="flex flex-col items-center relative z-[1]">
-                <button
-                  className={`h-[8px] w-[8px] rotate-45 ${buyPercentage >= percent
-                      ? "bg-[#edb546]"
-                      : "border border-[#edb546]"
-                    }`}
-                  onClick={() => setBuyPercentage(percent)}
-                />
-                <span className="mt-1 text-white">{percent}%</span>
-              </div>
-            ))}
-            <div className="absolute w-[90%] h-[2px] top-[5%] left-[5%] z-[0] bg-[#1F2128]"></div>
+            {percentages.map((percent, index) => {
+              const sizes = ["h-[16px] w-[16px]", "h-[14px] w-[14px]", "h-[12px] w-[12px]", "h-[10px] w-[10px]", "h-[8px] w-[8px]"];
+              const size = sizes[index] || "h-[8px] w-[8px]"; // fallback if more items
+
+              return (
+                <div key={`sell-${percent}`} className="flex flex-col items-center relative z-[1]">
+                  <button
+                    className={`${size} rotate-45 ${buyPercentage >= percent
+                        ? "bg-[#edb546]"
+                        : "border border-[#edb546]"
+                      }`}
+                    onClick={() => setBuyPercentage(percent)}
+                  />
+                  <span className="mt-1 text-white">{percent}%</span>
+                </div>
+              );
+            })}
+           <div className="absolute w-[90%] h-[2px] top-1/2 left-[5%] z-[0] bg-[#1F2128] -translate-y-1/2"></div>
+
           </div>
 
 
@@ -123,20 +129,27 @@ export default function TradingInterface() {
 
           {/* Percentage Selector */}
           <div className="mb-4 flex relative items-center justify-between gap-2">
-            {percentages.map((percent) => (
-              <div key={`sell-${percent}`} className="flex flex-col items-center relative z-[1]">
-                <button
-                  className={`h-[8px] w-[8px] rotate-45 ${sellPercentage >= percent
-                      ? "bg-[#edb546]"
-                      : "border border-[#edb546]"
-                    }`}
-                  onClick={() => setSellPercentage(percent)}
-                />
-                <span className="mt-1 text-white">{percent}%</span>
-              </div>
-            ))}
-            <div className="absolute w-[90%] h-[2px] top-[5%] left-[5%] z-[0] bg-[#1F2128]"></div>
+            {percentages.map((percent, index) => {
+              const sizes = ["h-[16px] w-[16px]", "h-[14px] w-[14px]", "h-[12px] w-[12px]", "h-[10px] w-[10px]", "h-[8px] w-[8px]"];
+              const size = sizes[index] || "h-[8px] w-[8px]"; // fallback if more items
+
+              return (
+                <div key={`sell-${percent}`} className="flex flex-col items-center relative z-[1]">
+                  <button
+                    className={`${size} rotate-45 ${sellPercentage >= percent
+                        ? "bg-[#edb546]"
+                        : "border border-[#edb546]"
+                      }`}
+                    onClick={() => setSellPercentage(percent)}
+                  />
+                  <span className="mt-1 text-white">{percent}%</span>
+                </div>
+              );
+            })}
+           <div className="absolute w-[90%] h-[2px] top-1/2 left-[5%] z-[0] bg-[#1F2128] -translate-y-1/2"></div>
+
           </div>
+
 
           {/* AVBL and Max Sell */}
           <div className="pb-2 pt-2.5 flex justify-between">
