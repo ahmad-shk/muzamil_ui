@@ -20,7 +20,7 @@ export default function CryptoTable() {
   );
 
   return (
-    <div className="rounded-lg w-full max-w-sm text-white">
+    <div className="rounded-lg w-full  text-white">
       {/* Search */}
       <div className="flex items-center bg-transparent px-4 py-2 rounded-[6px] mb-4 border-2 border-gray-800">
         <span className="text-[#f0b90b] mr-2 text-lg">

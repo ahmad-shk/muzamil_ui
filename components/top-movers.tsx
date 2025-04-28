@@ -20,8 +20,8 @@ const upArrow = (
 
 export default function TopMovers() {
   return (
-    <div className="h-full flex flex-col border border-gray-800 rounded-2xl">
-      <div className="flex items-center justify-between px-3 py-2 border-b border-[#1f2128] rounded-t-2xl">
+    <div className="h-full flex flex-col border border-gray-800 rounded-xl">
+      <div className="flex items-center justify-between px-3 pb-1 pt-4 border-b border-[#1f2128] rounded-t-xl">
         <h3 className="font-medium text-xs text-[#EDB546]">Top Movers</h3>
         <button className="text-[#6f6a6b] hover:text-white">
           <svg width="10" height="13" viewBox="0 0 10 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -31,20 +31,20 @@ export default function TopMovers() {
         </button>
       </div>
 
-      <div className="grid grid-cols-3 px-3 py-1 text-[10px] ">
+      <div className="flex justify-between px-3 py-2 text-[10px] ">
         <div>All</div>
         <div>Change</div>
         <div>New High/Low</div>
       </div>
 
-      <div className="flex-1 overflow-auto">
+      <div className="flex flex-col pt-1 overflow-y-scroll max-h-[80px]">
         {[
           { pair: "ALPHA/USDT", price: "0.23453", change: "-2.51%", direction: "down" },
           { pair: "WING/USDT", price: "0.23453", change: "+2.51%", direction: "up" },
         ].map((item, i) => (
           <div
             key={i}
-            className="grid grid-cols-3 px-3 py-1 text-[10px] hover:bg-[#1f2128]/50"
+            className="flex justify-between items-center px-3 pb-3 text-[10px] hover:bg-[#1f2128]/50"
           >
             <div className="flex flex-col">
               <span className="text-[#EDB546]">{item.pair}</span>

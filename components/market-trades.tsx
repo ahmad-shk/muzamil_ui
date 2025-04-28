@@ -25,7 +25,7 @@ export default function MarketTrades() {
   const [activeTab, setActiveTab] = useState("market");
 
   return (
-    <div className="flex flex-col h-[350px] w-[300px] bg-transparent border border-[#1f2128] rounded-2xl overflow-hidden">
+    <div className="flex flex-col h-[350px] bg-transparent border border-[#1f2128] rounded-2xl overflow-hidden">
       {/* Tabs Header */}
       <div className="flex items-center justify-between px-4 pt-4">
         <div className="flex gap-6 text-sm font-semibold">
@@ -33,10 +33,10 @@ export default function MarketTrades() {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`pb-1 pt-2 relative before:content-[''] before:absolute before:bottom-0 
+              className={`relative flex justify-center
                 ${
                 activeTab === tab.id
-                  ? "text-[#EDB546] border-[#EDB546]"
+                  ? "text-[#EDB546] before:content-[''] before:absolute before:bottom-0 before:h-[2px] before:w-[20px] before:bg-[#EDB546]"
                   : "text-[#8e8e8e]"
               } transition-colors duration-200`}
             >
@@ -51,7 +51,7 @@ export default function MarketTrades() {
       </div>
 
       {/* Divider */}
-      <div className="border-b border-[#1f2128] mt-2" />
+      <div className="border-b border-[#1f2128]" />
 
       {/* Table Header */}
       <div className="py-2 px-4 flex justify-between text-[12px] font-semibold text-white/60">

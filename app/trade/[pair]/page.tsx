@@ -21,13 +21,13 @@ export default function Home() {
       <Header />
 
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-6 md:px-12 py-8">
+      <main className="max-w-[1440px] mx-auto px-12 py-8 max-[500px]:px-6">
         {/* Trading Pair Info */}
-        <div className="flex gap-3">
+        <div className="flex gap-3 max-[1330px]:flex-col">
           <div className="flex flex-col gap-3 grow">
 
-            <div className="w-full rounded-2xl p-3 border border-gray-800 bg-[#090A0CCC]">
-              <div className="flex items-center justify-between text-white text-sm">
+            <div className="w-full rounded-2xl p-3 border border-gray-800 bg-[#090A0CCC] overflow-x-scroll">
+              <div className="flex items-center justify-between text-white text-sm min-w-[1000px] gap-8">
                 <div className="flex items-center gap-1">
                   <button className="flex items-center justify-center w-8 h-8  text-gray-400 hover:text-[#edb546] transition-colors">
                     <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -81,9 +81,9 @@ export default function Home() {
             </div>
 
             {/* Trading Interface */}
-            <div className="flex gap-3">
+            <div className="flex gap-3 max-[1048px]:flex-col-reverse">
               {/* Order Book */}
-              <div className="- rounded-lg ">
+              <div className=" rounded-lg ">
                 <OrderBook />
               </div>
 
@@ -100,17 +100,17 @@ export default function Home() {
           </div>
 
           {/* Market Trades and Buy/Sell */}
-          <div className="flex flex-col gap-3">
-            <div className=" rounded-2xl border border-gray-800">
-              <div className="p-2.5  rounded-2xl flex items-center">
+          <div className="flex flex-wrap min-[1330px]:flex-col gap-3 max-[1048px]:">
+
+              <div className="p-2.5 flex items-center rounded-2xl border border-gray-800 grow max-[740px]:basis-[100%]">
                 <CryptoTable />
               </div>
-            </div>
 
-            <div className=" rounded-lg ">
+
+            <div className=" rounded-lg grow max-[1048px]:order-3 max-[1048px]:basis-[100%]">
               <MarketTrades />
             </div>
-            <div className=" rounded-lg ">
+            <div className=" rounded-lg grow">
               <TopMovers />
             </div>
           </div>
