@@ -83,7 +83,7 @@ export default function Home() {
             {/* Trading Interface */}
             <div className="flex gap-3 max-[1048px]:flex-col-reverse">
               {/* Order Book */}
-              <div className=" rounded-lg ">
+              <div className=" rounded-lg  bg-transparent">
                 <OrderBook />
               </div>
 

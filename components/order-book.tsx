@@ -30,7 +30,7 @@ const getBuyOrders = () => {
 }
 
   return (
-    <div className="rounded-xl border-2 border-gray-800 text-[14px] max-h-[928px] pb-4 flex flex-col justify-between overflow-y-scroll">
+    <div className="rounded-xl border-2 border-gray-800 text-[14px] max-h-[928px] pb-5 flex flex-col justify-between overflow-y-scroll">
 
       <div className="border-b border-[#090a0c]">
         <div className="flex items-center justify-between px-4 py-1 pt-4">
