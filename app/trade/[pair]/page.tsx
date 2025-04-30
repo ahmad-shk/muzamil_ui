@@ -83,7 +83,7 @@ export default function Home() {
             {/* Trading Interface */}
             <div className="flex gap-3 max-[1048px]:flex-col-reverse">
               {/* Order Book */}
-              <div className=" rounded-lg  bg-transparent">
+              <div className="rounded-lg bg-transparent max-[640px]:hidden">
                 <OrderBook />
               </div>
 
@@ -102,15 +102,15 @@ export default function Home() {
           {/* Market Trades and Buy/Sell */}
           <div className="flex flex-wrap min-[1330px]:flex-col gap-3 max-[1048px]:">
 
-              <div className="p-2.5 flex items-center rounded-2xl border border-gray-800 grow max-[740px]:basis-[100%]">
+              <div className="p-2.5 flex items-center rounded-2xl border border-gray-800 grow max-[740px]:basis-[100%] max-[640px]:hidden">
                 <CryptoTable />
               </div>
 
 
-            <div className=" rounded-lg grow max-[1048px]:order-3 max-[1048px]:basis-[100%]">
+            <div className="rounded-lg grow max-[1048px]:order-3 max-[1048px]:basis-[100%] max-[640px]:hidden">
               <MarketTrades />
             </div>
-            <div className=" rounded-lg grow">
+            <div className="rounded-lg grow max-[640px]:hidden">
               <TopMovers />
             </div>
           </div>

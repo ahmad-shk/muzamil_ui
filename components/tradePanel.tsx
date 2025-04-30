@@ -73,7 +73,7 @@ export default function TradingInterface() {
               const size = sizes[index] || "h-[8px] w-[8px]"; // fallback if more items
 
               return (
-                <div key={`sell-${percent}`} className="flex flex-col items-center relative z-[1]">
+                <div key={`sell-${percent}`} className="flex flex-col items-center relative z-[1] pt-[1px]">
                   <button
                     className={`${size} rotate-45 ${buyPercentage >= percent
                         ? "bg-[#edb546]"
@@ -85,7 +85,7 @@ export default function TradingInterface() {
                 </div>
               );
             })}
-           <div className="absolute w-[90%] h-[2px] top-1/2 left-[5%] z-[0] bg-[#1F2128] -translate-y-1/2"></div>
+           <div className="absolute w-[90%] h-[2px] top-1/4 left-[5%] z-[0] bg-[#1F2128] -translate-y-1/2"></div>
 
           </div>
 
@@ -134,7 +134,7 @@ export default function TradingInterface() {
               const size = sizes[index] || "h-[8px] w-[8px]"; // fallback if more items
 
               return (
-                <div key={`sell-${percent}`} className="flex flex-col items-center relative z-[1]">
+                <div key={`sell-${percent}`} className="flex flex-col items-center relative z-[1] pt-[1px]">
                   <button
                     className={`${size} rotate-45 ${sellPercentage >= percent
                         ? "bg-[#edb546]"
@@ -146,7 +146,7 @@ export default function TradingInterface() {
                 </div>
               );
             })}
-           <div className="absolute w-[90%] h-[2px] top-1/2 left-[5%] z-[0] bg-[#1F2128] -translate-y-1/2"></div>
+           <div className="absolute w-[90%] h-[2px] top-1/4 left-[5%] z-[0] bg-[#1F2128] -translate-y-1/2"></div>
 
           </div>
 
