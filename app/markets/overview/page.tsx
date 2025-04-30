@@ -47,7 +47,7 @@ export default function Home() {
         </section>
 
         {/* Token Table */}
-        <section>
+        <section className="hidden md:block">
           <div className="-border border-[#2a2a2a] rounded-2xl p-8">
             <div className="overflow-x-auto">
               <table className="w-full table-fixed">

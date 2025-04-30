@@ -13,7 +13,7 @@ export default function TokenRow({ coin, img, price, change, volume, marketCap, 
   return (
     <tr className="border-b border-[#2b2d32] last:border-0">
     <td className="py-4 px-4">
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2"> 
         <Image src={img} alt={coin} width={24} height={24} className="rounded-full" />
         <span className="text-[#EDB546] font-medium">{coin}</span>
       </div>

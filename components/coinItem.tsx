@@ -54,8 +54,8 @@ export default function HotCoins() {
               <span className="text-[#EDB546] font-medium">{coin.name}</span>
             </div>
 
-            {/* Middle: Price */}
-            <div className="text-[#EDB546] min-w-[60px] text-center">
+            {/* Middle: Price (Hidden on Tablet only) */}
+            <div className="text-[#EDB546] min-w-[60px] text-center md:hidden">
               {coin.price}
             </div>
 
